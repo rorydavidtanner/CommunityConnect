@@ -2,34 +2,27 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Task extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    // static associate(models) {
-    //   // define association here
-    // }
+    static associate(models) {
+      Task.belongsTo(models.Category, { as: 'category' });
+      Task.belongsTo(models.User, { as: 'owner', foreignKey: { allowNull: false } });
+      Task.belongsTo(models.User, { as: 'assignee' });
+    }
   }
 
   Task.init(
     {
-      owner_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      assignee_id: DataTypes.INTEGER,
-      category_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
       title: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false,
       },
       details: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1024),
         allowNull: false,
+      },
+      isAssigned: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
       },
     },
     {
