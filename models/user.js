@@ -2,9 +2,9 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    // static associate(models) {
-    //   User.hasMany(models.Task);
-    // }
+    static associate(models) {
+      User.hasMany(models.Task);
+    }
   }
 
   User.init(
@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       email: {
         type: DataTypes.STRING(50),
         allowNull: false,
+        unique: true,
         validate: { isEmail: true },
       },
       first_name: {
