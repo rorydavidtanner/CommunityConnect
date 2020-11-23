@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 // Import routes
 const apiRoutes = require('./routes/api-routes');
-const htmlRoutes = require('./routes/html-routes')
+const htmlRoutes = require('./routes/html-routes');
 
 apiRoutes(app);
 htmlRoutes(app);
