@@ -3,6 +3,7 @@
 // Dependencies
 const express = require('express');
 const exphbs = require('express-handlebars');
+const db = require('./models');
 
 // Create an instance of the express app.
 const app = express();
@@ -27,8 +28,10 @@ app.get('/', (req, res) => {
   res.render('browse');
 });
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, () => {
-  // Log (server-side) when our server has started
-  console.log(`Server listening on: http://localhost:${PORT}`);
+// Sync the database then start our server so that it can begin listening to client requests.
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    // Log (server-side) when our server has started
+    console.log(`Server listening on: http://localhost:${PORT}`);
+  });
 });
