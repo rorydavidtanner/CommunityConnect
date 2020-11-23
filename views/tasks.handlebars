@@ -3,9 +3,9 @@
 <h2>These are the tasks available</h2>
 
 <ul>
-  {{#each tasks}}
+  {{#each task}}
     {{#unless allocated}}
-      {{> tasks/task-block allocated=true}}
+       <li>{{this}}</li>
     {{/unless}}
   {{/each}}
 </ul>
