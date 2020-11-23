@@ -28,6 +28,13 @@ app.get('/', (req, res) => {
   res.render('browse');
 });
 
+// Import routes
+const apiRoutes = require('./routes/api-routes');
+const htmlRoutes = require('./routes/html-routes')
+
+apiRoutes(app);
+htmlRoutes(app);
+
 // Sync the database then start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
