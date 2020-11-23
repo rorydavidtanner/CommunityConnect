@@ -4,5 +4,8 @@
 		"commonjs": true,
 		"node": true
 	},
-	"extends": "airbnb"
+	"extends": "airbnb",
+	"rules": {
+		"no-console": "off"
+	}
 }
