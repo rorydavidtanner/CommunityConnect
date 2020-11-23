@@ -7,20 +7,9 @@ const index = require("../models/index.js");
 const task = require("../models/task.js");
 const user = require("../models/user.js");
 
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
-    index.all(function (data) {
-        const hbsObject = {
-            index: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
-    });
-});
-
 // Create a route to handle users
-router.post("/api/user", function (req, res) {
-    user.create([
+router.post("/api/task", function (req, res) {
+    task.create([
         "owner_id", "assignee_id", "category", "title", "details"
     ], [
         req.body.owner_id, req.body.assignee_id, req.body.category, req.body.title, req.body.details
@@ -60,7 +49,7 @@ router.put("/api/user/:id", function (req, res) {
 router.delete("/api/task/:id", function (req, res) {
     var condition = "id = " + req.params.id;
 
-    burger.delete(condition, function (result) {
+    task.delete(condition, function (result) {
         if (result.affectedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
