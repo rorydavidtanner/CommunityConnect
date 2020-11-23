@@ -1,6 +1,9 @@
 {
   "name": "project2",
   "version": "1.0.0",
+  "engines": {
+    "node": "v12.18.4"
+  },
   "description": "",
   "main": "index.js",
   "dependencies": {
