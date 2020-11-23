@@ -1,1 +1,0 @@
-INSERT INTO connect (category) VALUES ('Pick up/ Delivery'),('Maintenance'),('Lend'),('Other Service')
