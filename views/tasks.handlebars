@@ -1,0 +1,39 @@
+<h1>Tasks</h1>
+
+<h2>These are the tasks available</h2>
+
+<ul>
+  {{#each task}}
+    {{#unless allocated}}
+       <li>{{this}}</li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Add a Task</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Task:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+  <div class="form-group">
+    <label for="task">Task</label><br>
+  </div>
+  <div class="form-group row">
+        <label for="categories" class="col-sm-2">Categories</label>
+        <select class="form-control col-sm-6" id="categories">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group row">
+    <label for="task-details" class="col-sm-2">Description</label>
+        <textarea class="form-control col-sm-6" id="inputTaskDetails" rows="6"></textarea>
+    </div>
+
+  <button type="submit">Add Task</button>
+</form>
