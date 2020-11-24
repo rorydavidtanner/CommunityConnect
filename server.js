@@ -23,11 +23,6 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Request handler to get page browse.handlebars
-app.get('/', (req, res) => {
-  res.render('browse');
-});
-
 // Import routes
 const apiRoutes = require('./routes/api-routes');
 const htmlRoutes = require('./routes/html-routes');
