@@ -27,15 +27,13 @@ module.exports = function (app) {
 
   // Route to add a task.
   app.post('/api/tasks', function (req, res) {
-    console.log(req.body);
     db.Task.create({
       title: req.body.title,
-      CategoryId: req.body.category,
+      CategoryId: req.body.categoryId,
       description: req.body.description,
       createdAt: new Date(),
       updatedAt: new Date(),
     }).then(function (dbTask) {
-      console.log(dbTask);
       res.json(dbTask);
     });
   });
