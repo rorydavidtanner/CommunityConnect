@@ -11,6 +11,9 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, '../public/post.html'));
   });
   app.get('/browse', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/browse.html'));
+    res.render('browse', data);
+  });
+  app.get('/tasks', function (req, res) {
+    res.render('tasks');
   });
 };
