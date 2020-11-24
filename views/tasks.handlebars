@@ -1,7 +1,7 @@
 <div class="card-deck">
     {{#each task}}
     <div class="card border-dark mb-3 task" data-id="{{ this.id }}" style="max-width: 18rem;">
-        <div class="card-header">{{ this.category }}</div>
+        <div class="card-header">{{ this.Category.name }}</div>
         <div class="card-body text-dark">
             <h5 class="card-title">{{ this.title }}</h5>
             <p class="card-text">{{ this.description }}</p>
