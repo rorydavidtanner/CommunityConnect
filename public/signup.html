@@ -43,17 +43,17 @@
                     <form class="signup">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            <input type="email" class="form-control" id="email-input" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            <input type="password" class="form-control" id="password-input" placeholder="Password" required>
                         </div>
                         <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             <span class="sr-only">Error:</span> <span class="msg"></span>
                         </div>
-                        <button type="submit" class="btn btn-default">Sign Up</button>
+                        <button type="submit" class="btn btn-dark text-white">Sign Up</button>
                     </form>
                     <br />
                     <p>Or log in <a href="/login">here</a></p>
@@ -69,7 +69,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="assets/js/signup.js"></script>
 </body>
 
 </html>
