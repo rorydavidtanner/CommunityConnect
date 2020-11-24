@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class Task extends Model {
     static associate(models) {
       Task.belongsTo(models.Category);
-      Task.belongsTo(models.User, { as: 'owner', foreignKey: { allowNull: false }, onDelete: 'CASCADE' });
+      Task.belongsTo(models.User, { as: 'owner', onDelete: 'CASCADE' });
+      // Task.belongsTo(models.User, { as: 'owner', foreignKey: { allowNull: false }, onDelete: 'CASCADE' });
       Task.belongsTo(models.User, { as: 'assignee' });
     }
   }
@@ -15,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
-      details: {
+      description: {
         type: DataTypes.STRING(1024),
         allowNull: false,
       },
