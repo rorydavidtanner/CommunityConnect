@@ -30,7 +30,7 @@ module.exports = function (app) {
     console.log(req.body);
     db.Task.create({
       title: req.body.title,
-      CategoryId: req.body.category,
+      CategoryId: req.body.categoryId,
       description: req.body.description,
       createdAt: new Date(),
       updatedAt: new Date(),
