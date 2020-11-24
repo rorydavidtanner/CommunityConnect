@@ -17,9 +17,8 @@ $("#post-form").on("submit", function (event) {
         // window.location.replace("members");
     });
 
-    $('#inputTaskTitle').val("");
-    $('#inputTaskDescription').val("");
-    $('#categories').val("");
+    // Reset the form.
+    $('#post-form').trigger('reset');
 })
 
 // Function to populate category list.
