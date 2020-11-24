@@ -20,8 +20,6 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link btn btn-dark text-white" href="../views/layouts/browse.handlebars">Browse
-                        Tasks</a>
                     <a class="nav-link" href="signup.html">Sign up</a>
                     <a class="nav-link" href="login.html">Log in</a>
                 </div>
@@ -32,40 +30,55 @@
     <section>
         <div class="jumbotron jumbotron-fluid">
             <div class="container text-center">
-                <h1 class="display-4">POST A TASK</h1>
-                <p class="lead">Ask the community for what you need, whether it's a task to be completed or a request to
-                    borrow and be alerted when your request is accepted.
-                </p>
+                <h1 class="display-4">Meet the Team</h1>
             </div>
         </div>
 
-        <div class='container'>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <form class="col-md-10" id="post-form">
-                    <div class="form-group row">
-                        <label for="task-title" class="col-sm-2">Task Title</label>
-                        <input type="text" class="form-control col-sm-6" id="inputTaskTitle">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0">Tim Silby</h5>
+                        Cras sit amet nibh libero, in gravida nulla.
                     </div>
-                    <div class="form-group row">
-                        <label for="categories" class="col-sm-2">Categories</label>
-                        <select class="form-control col-sm-6" id="categories">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group row">
-                        <label for="task-details" class="col-sm-2">Description</label>
-                        <textarea class="form-control col-sm-6" id="inputTaskDetails" rows="6"></textarea>
-                    </div>
-                    <div class="col-sm-10 text-center">
-                        <button type="submit" class="btn btn-dark">POST</button>
-                    </div>
-                </form>
+                    <img src="..." class="align-self-center mr-3" alt="Tim Silby Profile Photo" width="150"
+                        height="150">
+                </div>
             </div>
+
+            <div class="col-sm-2">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Nina Welsh</h5>
+                        Worked on the Front end of the application.
+                    </div>
+                    <img src="../public/assets/images/IMG_0006.jpeg" class="align-self-center ml-3"
+                        alt="Nina Welsh Profile Photo" width="150" height="150">
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0">Colin Smith</h5>
+                        Cras sit amet nibh libero, in gravida nulla.
+                    </div>
+                    <img src="..." class="align-self-center mr-3" alt="Colin Smith Profile Photo" width="150"
+                        height="150">
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Rory</h5>
+                        Cras sit amet nibh libero, in gravida nulla.
+                    </div>
+                    <img src="..." class="align-self-center ml-3" alt="Rory Profile Photo" width="150" height="150">
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="position-sticky">
@@ -74,9 +87,6 @@
             <a class="nav-link text-white" href="team.html">Team</a>
         </nav>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./assets/js/post.js"></script>
 </body>
 
 </html>
