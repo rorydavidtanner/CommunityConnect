@@ -1,39 +1,14 @@
-<h1>Tasks</h1>
-
-<h2>These are the tasks available</h2>
-
-<ul>
-  {{#each task}}
+<div class="card-deck">
+    {{#each task}}
     {{#unless allocated}}
-       <li>{{this}}</li>
+    <div class="card border-dark mb-3 task" data-id="{{ this.id }}" style="max-width: 18rem;">
+        <div class="card-header">{{ this.category }}</div>
+        <div class="card-body text-dark">
+            <h5 class="card-title">{{ this.title }}</h5>
+            <p class="card-text">{{ this.description }}</p>
+            <button type="submit" class="btn btn-dark">ACCEPT TASK</button>
+        </div>
+    </div>
     {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Add a Task</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Task:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-  <div class="form-group">
-    <label for="task">Task</label><br>
-  </div>
-  <div class="form-group row">
-        <label for="categories" class="col-sm-2">Categories</label>
-        <select class="form-control col-sm-6" id="categories">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-    </div>
-    <div class="form-group row">
-    <label for="task-details" class="col-sm-2">Description</label>
-        <textarea class="form-control col-sm-6" id="inputTaskDetails" rows="6"></textarea>
-    </div>
-
-  <button type="submit">Add Task</button>
-</form>
+    {{/each}}
+</div>
