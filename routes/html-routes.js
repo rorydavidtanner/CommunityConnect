@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('../models');
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 
 module.exports = function (app) {
 
@@ -14,7 +15,7 @@ module.exports = function (app) {
   });
 
   // Route to load the post task page.
-  app.get('/post', function (req, res) {
+  app.get('/post', isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, '../public/post.html'));
   });
   app.get('/browse', function (req, res) {
