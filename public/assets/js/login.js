@@ -24,7 +24,8 @@ function loginUser({ email, password }) {
         password: password,
     })
         .then(() => {
-            // toastMessage('success', `Login successful`);
+			// toastMessage('success', `Login successful`);
+			console.log("Login successful");
             window.location.replace('/');
         })
         .catch((err) => {
