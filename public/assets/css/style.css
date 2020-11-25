@@ -15,6 +15,10 @@ footer {
     flex-shrink: 0;
 }
 
+.card {
+    margin-left: 20px;
+}
+
 .nav-link {
  margin-right: 20px;
 }
