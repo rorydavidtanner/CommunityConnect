@@ -24,11 +24,9 @@ function loginUser({ email, password }) {
         password: password,
     })
         .then(() => {
-			toastMessage('success', `Login successful`);
 			window.location.replace('/mytasks');
         })
         .catch((err) => {
-            toastMessage('error', err.responseText);
 		});
 
 }
