@@ -33,6 +33,11 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, '../public/signup.html'))
   });
 
+  // Route to get the login page.
+  app.get('/login', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/login.html'))
+  });
+
   // Route to get the about page.
   app.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/about.html'))
