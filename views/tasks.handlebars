@@ -9,17 +9,19 @@
     </div>
 </section>
 
-<div class="row row-cols-1 row-cols-md-5">
-    {{#each task}}
-    <div class="card border-dark mb-3 task" data-id="{{ this.id }}" style="max-width: 18rem;">
-        <div class="card-header">{{ this.Category.name }}</div>
-        <div class="card-body text-dark">
-            <h5 class="card-title">{{ this.title }}</h5>
-            <p class="card-text">{{ this.description }}</p>
+<section>
+    <div class="row row-cols-1 row-cols-md-5">
+        {{#each task}}
+        <div class="card border-dark mb-3 task" data-id="{{ this.id }}" style="max-width: 18rem;">
+            <div class="card-header">{{ this.Category.name }}</div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">{{ this.title }}</h5>
+                <p class="card-text">{{ this.description }}</p>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-dark">ACCEPT TASK</button>
+            </div>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-dark">ACCEPT TASK</button>
-        </div>
+        {{/each}}
     </div>
-    {{/each}}
-</div>
+</section>
