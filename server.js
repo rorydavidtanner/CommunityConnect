@@ -27,7 +27,7 @@ app.use(passport.session());
 
 // Set Handlebars as the default templating engine.
 app.engine('handlebars', exphbs({
-  defaultLayout: 'browse',
+  defaultLayout: 'main',
   runtimeOptions: {
     allowProtoPropertiesByDefault: true,
     allowProtoMethodsByDefault: true,

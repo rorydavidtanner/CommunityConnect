@@ -18,6 +18,8 @@ module.exports = function (app) {
   app.get('/post', isAuthenticated, function (req, res) {
     res.sendFile(path.join(__dirname, '../public/post.html'));
   });
+
+  // Route to load the browse tasks page.
   app.get('/browse', function (req, res) {
     db.Task.findAll({
       include: db.Category,
@@ -26,6 +28,21 @@ module.exports = function (app) {
       },
     }).then(function (dbTask) {
       res.render('tasks', { task: dbTask });
+    });
+  });
+
+  // Route to load the mytasks page.
+  app.get('/mytasks', isAuthenticated, function (req, res) {
+    db.Task.findAll({
+      include: db.Category,
+      where: {
+        ownerId: req.user.id,
+      },
+    }).then(function (dbTask) {
+      res.render('mytasks', {
+        task: dbTask,
+        userName: `${req.user.first_name} ${req.user.last_name}`
+      });
     });
   });
 

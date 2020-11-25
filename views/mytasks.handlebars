@@ -1,12 +1,9 @@
 <section>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1 class="display-4">BROWSE TASKS</h1>
-            <p class="lead">View requests for help and see where you can be of assistance in your community. Make a
-                contribution in your local area and be a hero to those in need today.
-            </p>
-        </div>
-    </div>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container text-center">
+			<h1 class="display-4">Welcome back {{ userName }}</h1>
+		</div>
+	</div>
 </section>
 
 <div class="row row-cols-1 row-cols-md-5">
@@ -18,7 +15,7 @@
             <p class="card-text">{{ this.description }}</p>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-dark">ACCEPT TASK</button>
+            <button type="submit" class="btn btn-dark">DELETE TASK</button>
         </div>
     </div>
     {{/each}}

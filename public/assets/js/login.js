@@ -25,7 +25,7 @@ function loginUser({ email, password }) {
     })
         .then(() => {
 			toastMessage('success', `Login successful`);
-			setTimeout(() => window.location.replace('/'), 3000);
+			setTimeout(() => window.location.replace('/mytasks'), 3000);
         })
         .catch((err) => {
             toastMessage('error', err.responseText);
