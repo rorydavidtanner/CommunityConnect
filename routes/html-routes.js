@@ -2,12 +2,18 @@ const path = require('path');
 const db = require('../models');
 
 module.exports = function (app) {
+
+  // Route to get the landing page.
   app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
+
+  // Route to load the landing page when browsing to /index.
   app.get('/index', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
+
+  // Route to load the post task page.
   app.get('/post', function (req, res) {
     res.sendFile(path.join(__dirname, '../public/post.html'));
   });
@@ -21,4 +27,10 @@ module.exports = function (app) {
       res.render('tasks', { task: dbTask });
     });
   });
+
+  // Route to get the signup page.
+  app.get('/signup', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/signup.html'))
+  });
+
 }

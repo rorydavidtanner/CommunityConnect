@@ -13,18 +13,18 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fd9727;">
-            <a class="navbar-brand" href="index.html">Community Connect</a>
+            <a class="navbar-brand" href="/index">Community Connect</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link btn btn-dark text-white" href="../views/layouts/browse.handlebars">Browse
+                    <a class="nav-link btn btn-dark text-white" href="/browse">Browse
                         Tasks</a>
-                    <a class="nav-link btn btn-dark text-white" href="post.html">Post a
+                    <a class="nav-link btn btn-dark text-white" href="/post">Post a
                         Task</a>
-                    <a class="nav-link" href="login.html">Log In</a>
+                    <a class="nav-link" href="/login">Log In</a>
                 </div>
             </div>
         </nav>
@@ -40,20 +40,36 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <form class="signup">
+                    <form class="signup" id="signupForm">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            <label for="inputEmail">Email address</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
                         </div>
                         <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             <span class="sr-only">Error:</span> <span class="msg"></span>
                         </div>
-                        <button type="submit" class="btn btn-default">Sign Up</button>
+                        <div class="form-group">
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="First name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhone">Phone number</label>
+                            <input type="text" class="form-control" id="inputPhone" placeholder="Phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <textarea class="form-control" id="inputAddress" placeholder="Address" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark text-white">Sign Up</button>
                     </form>
                     <br />
                     <p>Or log in <a href="/login">here</a></p>
@@ -63,13 +79,13 @@
 
     <footer class="position-sticky">
         <nav class="nav navbar-light" style="background-color: #fd9727">
-            <a class="nav-link text-white" href="about.html">About</a>
-            <a class="nav-link text-white" href="team.html">Team</a>
+            <a class="nav-link text-white" href="/about">About</a>
+            <a class="nav-link text-white" href="/team">Team</a>
         </nav>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="./assets/js/signup.js"></script>
 </body>
 
 </html>
