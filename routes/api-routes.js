@@ -77,6 +77,7 @@ module.exports = function (app) {
   app.post('/api/users', function (req, res) {
     db.User.create({
       email: req.body.email,
+      password: req.body.password,
       first_name: req.body.firstName,
       last_name: req.body.lastName,
       phone: req.body.phone,
