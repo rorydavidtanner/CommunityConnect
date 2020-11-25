@@ -1,6 +1,7 @@
 const path = require('path');
 const db = require('../models');
 const isAuthenticated = require('../config/middleware/isAuthenticated');
+const { Op } = require('sequelize');
 
 module.exports = function (app) {
 
@@ -33,17 +34,32 @@ module.exports = function (app) {
 
   // Route to load the mytasks page.
   app.get('/mytasks', isAuthenticated, function (req, res) {
+
+    // Query the database to get all tasks where the current user is either owner or assignee.
     db.Task.findAll({
       include: db.Category,
       where: {
-        ownerId: req.user.id,
-      },
+        [Op.or]: [
+          { ownerId: req.user.id },
+          { assigneeId: req.user.id }
+        ]
+      }
     }).then(function (dbTask) {
-      res.render('mytasks', {
-        task: dbTask,
-        userName: `${req.user.first_name} ${req.user.last_name}`
+      // Check if the current user is the owner of the task or not. Map the array to add a new
+      // "isOwner" key which will be used by handlebars when rendering the page.
+      dbTask.map((task) => {
+        (task.ownerId === req.user.id) ? task.isOwner = true : task.isOwner = false;
       });
+
+      // Render the view.
+      res.render('mytasks', {
+        userId: req.user.id,
+        userName: `${req.user.first_name} ${req.user.last_name}`,
+        task: dbTask,
+      });
+
     });
+
   });
 
   // Route to get the signup page.
