@@ -117,9 +117,8 @@ module.exports = function (app) {
 		else {
 			res.json({
 				id: req.user.id,
-				name: req.user.name,
-				email: req.user.email,
-				createdAt: req.user.createdAt,
+				firstName: req.user.first_name,
+				lastName: req.user.last_name,
 			});
 		}
 	});
