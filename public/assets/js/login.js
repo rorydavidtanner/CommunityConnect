@@ -24,11 +24,11 @@ function loginUser({ email, password }) {
         password: password,
     })
         .then(() => {
-            toastMessage('success', `Login successful`);
+            // toastMessage('success', `Login successful`);
             window.location.replace('/');
         })
         .catch((err) => {
-            toastMessage('error', err.responseText);
+            // toastMessage('error', err.responseText);
 		});
 
 }
