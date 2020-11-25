@@ -21,6 +21,6 @@ $("#signupForm").on("submit", function (event) {
     });
 
     // Reset the form.
-	$('signupForm').trigger('reset');
+	$('#signupForm').trigger('reset');
 
 })
