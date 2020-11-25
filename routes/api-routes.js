@@ -1,4 +1,6 @@
 const db = require('../models');
+const passport = require('../config/passport');
+
 
 module.exports = function (app) {
   // Route to get all unassigned tasks.
@@ -100,4 +102,10 @@ module.exports = function (app) {
       res.json(dbUser);
     });
   });
+
+  // Route to login a user.
+  app.post('/api/login', passport.authenticate('local'), (req, res) => {
+    res.json(req.user);
+  });
+
 };
