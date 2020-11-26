@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <h3>My Requested Tasks</h3>
+                <h3 class="mytasks-subheading">My Requested Tasks</h3>
                 <div class="row row-cols-1 row-cols-md-5">
                     {{#each task}}
                     {{#if isOwner}}
@@ -26,11 +26,13 @@
                                 TASK</button>
                         </div>
                     </div>
+                    {{else}}
+                    <h4>You have no requested tasks.</h4>
                     {{/if}}
                     {{/each}}
                 </div>
 
-                <h3>My Assigned Tasks</h3>
+                <h3 class="mytasks-subheading">My Assigned Tasks</h3>
                 <div class="row row-cols-1 row-cols-md-5">
                     {{#each task}}
                     {{#unless isOwner}}
@@ -45,6 +47,8 @@
                                 TASK</button>
                         </div>
                     </div>
+                    {{else}}
+                    <h4>You have no assigned tasks.</h4>
                     {{/unless}}
                     {{/each}}
                 </div>
