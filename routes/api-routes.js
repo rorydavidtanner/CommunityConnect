@@ -21,6 +21,7 @@ module.exports = function (app) {
 			title: req.body.title,
 			CategoryId: req.body.categoryId,
 			description: req.body.description,
+			ownerId: req.body.ownerId,
 			createdAt: new Date(),
 			updatedAt: new Date(),
 		}).then(function (dbTask) {
@@ -41,7 +42,6 @@ module.exports = function (app) {
 
 	// Route to accept a task
 	app.put('/api/accept/:id', function (req, res) {
-		console.log(req.body);
 		db.Task.update({
 			isAssigned: 1,
 			assigneeId: req.user.id,
@@ -57,7 +57,6 @@ module.exports = function (app) {
 
 	// Route to edit a task.
 	app.put('/api/tasks/:id', function (req, res) {
-		console.log(req.body);
 		db.Task.update({
 			title: req.body.title,
 			CategoryId: req.body.category,

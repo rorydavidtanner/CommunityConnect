@@ -1,17 +1,25 @@
-// On submit of post task form
-$("#post-form").on("submit", function (event) {
+// On submit of post task form.
+$("#post-form").on("submit", async function (event) {
+
     event.preventDefault();
 
-    // Get the form data
+    // Get the user id.
+    let userId;
+    await $.get('/api/user_data').then(function (data) {
+        userId = data.id;
+    });
+
+
+    // Get the form data.
     const taskData = {
         title: $('#inputTaskTitle').val().trim(),
         description: $('#inputTaskDescription').val().trim(),
-        categoryId: $('#categories').children('option:selected').data('id')
+        categoryId: $('#categories').children('option:selected').data('id'),
+        ownerId: userId
     }
 
     // Make a post request to add the new task to the database.
     $.post('/api/tasks', taskData).then(function (data) {
-        // this bit is for the login section once we have that
         // window.location.replace("members");
     });
 
