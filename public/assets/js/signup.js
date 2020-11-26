@@ -25,8 +25,9 @@ function signupUser(userData) {
     // Make a post request to add the new task to the database.
     $.post('/api/users', userData)
     .then(() => {
-        $("#signupModalText").text("Your account has been created!");
+        $("#signupModalText").text("Your account has been created!\nTaking you to the login page now.");
         $("#signupModal").modal("show");
+        setTimeout(() => window.location.replace('/login'), 3000);
     })
     .catch((err) => {
         $("#signupModalText").text("Something went wrong creating your account. Please try again.");
