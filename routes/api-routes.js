@@ -39,6 +39,22 @@ module.exports = function (app) {
 		});
 	});
 
+	// Route to accept a task
+	app.put('/api/accept/:id', function (req, res) {
+		console.log(req.body);
+		db.Task.update({
+			isAssigned: 1,
+			assigneeId: req.user.id,
+			updatedAt: new Date()
+		}, {
+			where: {
+				id: req.params.id
+			}
+		}).then(function (dbTask) {
+			res.json(dbTask);
+		})
+	});
+
 	// Route to edit a task.
 	app.put('/api/tasks/:id', function (req, res) {
 		console.log(req.body);

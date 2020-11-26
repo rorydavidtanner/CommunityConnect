@@ -2,8 +2,6 @@
 $("#signupForm").on("submit", function (event) {
 	event.preventDefault();
 
-	console.log("button clicked");
-
     // Get the form data
     const userData = {
         email: $('#inputEmail').val().trim(),

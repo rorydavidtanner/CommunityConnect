@@ -18,8 +18,8 @@
                 <h5 class="card-title">{{ this.title }}</h5>
                 <p class="card-text">{{ this.description }}</p>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-dark">ACCEPT TASK</button>
+            <div class="card-footer text-center">
+                <button type="button" class="btn btn-dark btn-accept" data-id="{{ this.id }}">ACCEPT TASK</button>
             </div>
         </div>
         {{/each}}
