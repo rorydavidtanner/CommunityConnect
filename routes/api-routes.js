@@ -15,18 +15,6 @@ module.exports = function (app) {
 		});
 	});
 
-	// Route to get all tasks assigned to a user.
-	app.get('/api/usertasks/:userId', function (req, res) {
-		db.Task.findAll({
-			include: db.Category,
-			where: {
-				ownerId: req.params.userId,
-			},
-		}).then((dbTask) => {
-			res.json(dbTask);
-		});
-	});
-
 	// Route to add a task.
 	app.post('/api/tasks', function (req, res) {
 		db.Task.create({

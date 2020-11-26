@@ -1,6 +1,5 @@
-// Activating Application
-
 // Dependencies
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -8,12 +7,11 @@ const exphbs = require('express-handlebars');
 const db = require('./models');
 const passport = require('./config/passport');
 
+// Set port for express.
+const PORT = process.env.PORT || 8080;
+
 // Create an instance of the express app.
 const app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-const PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
