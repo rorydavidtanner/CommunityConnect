@@ -90,7 +90,6 @@ module.exports = function (app) {
 			createdAt: new Date(),
 			updatedAt: new Date(),
 		}).then(function (dbUser) {
-			console.log(dbUser);
 			res.json(dbUser);
 		});
 	});

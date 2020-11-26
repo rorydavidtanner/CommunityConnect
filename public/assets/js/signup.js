@@ -12,13 +12,25 @@ $("#signupForm").on("submit", function (event) {
         address: $('#inputAddress').val().trim()
     }
 
-    // Make a post request to add the new user to the database.
-    $.post('/api/users', userData).then(function (data) {
-        // this bit is for the login section once we have that
-        // window.location.replace("members");
-    });
+    // Call signupUser to create the account.
+    signupUser(userData);
 
     // Reset the form.
 	$('#signupForm').trigger('reset');
 
 })
+
+function signupUser(userData) {
+
+    // Make a post request to add the new task to the database.
+    $.post('/api/users', userData)
+    .then(() => {
+        $("#signupModalText").text("Your account has been created!");
+        $("#signupModal").modal("show");
+    })
+    .catch((err) => {
+        $("#signupModalText").text("Something went wrong creating your account. Please try again.");
+        $("#signupModal").modal("show");
+    });
+
+}
