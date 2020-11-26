@@ -24,13 +24,12 @@ function loginUser({ email, password }) {
         password: password,
     })
 	.then(() => {
-
 		$("#loginModalText").text("Login successful.");
 		$("#loginModal").modal("show");
 		setTimeout(() => window.location.replace('/mytasks'), 3000);
 	})
 	.catch((err) => {
-		$("#loginModalText").text("Login failed.Please try again.");
+		$("#loginModalText").text("Login failed. Please try again.");
 		$("#loginModal").modal("show");
 	});
 

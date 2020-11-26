@@ -18,14 +18,28 @@ $("#post-form").on("submit", async function (event) {
         ownerId: userId
     }
 
-    // Make a post request to add the new task to the database.
-    $.post('/api/tasks', taskData).then(function (data) {
-        // window.location.replace("members");
-    });
+    // Call postTask to create the task.
+    postTask(taskData);
 
     // Reset the form.
     $('#post-form').trigger('reset');
+
 })
+
+function postTask(taskData) {
+
+    // Make a post request to add the new task to the database.
+    $.post('/api/tasks', taskData)
+    .then(() => {
+        $("#postModalText").text("Your task has been created!");
+        $("#postModal").modal("show");
+    })
+    .catch((err) => {
+        $("#postModalText").text("Something went wrong creating your task. Please try again.");
+        $("#postModal").modal("show");
+    });
+
+}
 
 // Function to populate category list.
 function renderCategories() {
