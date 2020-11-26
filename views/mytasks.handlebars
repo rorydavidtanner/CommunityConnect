@@ -18,8 +18,8 @@
                 <h5 class="card-title">{{ this.title }}</h5>
                 <p class="card-text">{{ this.description }}</p>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-dark">DELETE TASK</button>
+            <div class="card-footer text-center">
+                <button type="button" class="btn btn-dark btn-delete" data-id="{{ this.id }}">DELETE TASK</button>
             </div>
         </div>
         {{/if}}
@@ -36,8 +36,8 @@
                 <h5 class="card-title">{{ this.title }}</h5>
                 <p class="card-text">{{ this.description }}</p>
             </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-dark">CLOSE TASK</button>
+            <div class="card-footer text-center">
+                <button type="button" class="btn btn-dark btn-close" data-id="{{ this.id }}">CLOSE TASK</button>
             </div>
         </div>
         {{/unless}}
