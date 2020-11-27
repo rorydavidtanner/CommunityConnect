@@ -8,13 +8,16 @@ $(".btn-accept").on("click", function (event) {
 
 	// Send a PUT request to the accept api with the id as the last parameter.
 	// The api endpoint will take care of the rest.
-	$.ajax(
-		`/api/accept/${taskId}`,
-		{ method: "PUT" }
-	)
+	$.ajax({
+		url: `/api/accept/${taskId}`,
+		method: "PUT",
 
-	// Remove the card because it is no longer unassigned.
-	$(this).parents(".card").remove();
+		// Remove the card because it is no longer unassigned.
+		success: function () { $(event.target).parents(".card").remove() },
+
+		// If the endpoint returns a 401 (not authorised), redirect to the login page.
+		statusCode: { "401": function () { window.location.replace("/login") } }
+	});
 
 });
 
@@ -26,14 +29,14 @@ $(".btn-delete, .btn-close").on("click", function (event) {
 	// Get the task id.
 	const taskId = $(this).data("id");
 
-	// Send a PUT request to the accept api with the id as the last parameter.
-	// The api endpoint will take care of the rest.
-	$.ajax(
-		`/api/tasks/${taskId}`,
-		{ method: "DELETE" }
-	)
+	// Send a DELETE request to the tasks api with the id as the last parameter.
+	$.ajax({
+		url: `/api/tasks/${taskId}`,
+		method: "DELETE",
 
-	// Remove the card because it is no longer unassigned.
-	$(this).parents(".card").remove();
+		// Remove the card because it is no longer unassigned.
+		success: function () { $(event.target).parents(".card").remove() },
+
+	});
 
 });

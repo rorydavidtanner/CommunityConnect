@@ -42,6 +42,14 @@ module.exports = function (app) {
 
 	// Route to accept a task
 	app.put('/api/accept/:id', function (req, res) {
+
+		// If the user is not logged in, return a 401 so the jQuery ajax call can handle it.
+		if (!req.user) {
+			res.sendStatus(401);
+			return;
+		}
+
+		// Update the db record.
 		db.Task.update({
 			isAssigned: 1,
 			assigneeId: req.user.id,
@@ -53,6 +61,7 @@ module.exports = function (app) {
 		}).then(function (dbTask) {
 			res.json(dbTask);
 		})
+
 	});
 
 	// Route to edit a task.
@@ -111,7 +120,6 @@ module.exports = function (app) {
 	});
 
 	// Route to get logged in user data. If no user is logged in send back an empty object.
-	// Otherwise send back user data.
 	app.get('/api/user_data', (req, res) => {
 		if (!req.user) {
 			res.json({});
