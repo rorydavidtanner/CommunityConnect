@@ -6,17 +6,17 @@ $.get('/api/user_data').then((data) => {
     let navItems;
 
     const navBtns = `
-        <li class="nav-item">
+        <li class="nav-item mt-2 mt-lg-0">
             <a class="nav-link btn btn-dark text-white" href="/browse">Browse Tasks</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mt-2 mt-lg-0">
             <a class="nav-link btn btn-dark text-white" href="/post">Post a Task</a>
         </li>`;
 
     if (data.id) {
         navItems = `
         ${navBtns}
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown mt-2 mt-lg-0">
             <a class="nav-link btn btn-outline-light text-dark dropdown-toggle" href="#" id="navUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="fas fa-user-circle pr-2 pl-1"></span>${data.firstName} ${data.lastName}
             </a>
@@ -29,10 +29,10 @@ $.get('/api/user_data').then((data) => {
     else {
         navItems = `
         ${navBtns}
-        <li class="nav-item">
+        <li class="nav-item mt-2 mt-lg-0">
             <a class="nav-link btn btn-outline-light text-dark" href="/signup">Sign up</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mt-2 mt-lg-0">
             <a class="nav-link btn btn-outline-light text-dark" href="/login">Log in</a>
         </li>`;
     }
