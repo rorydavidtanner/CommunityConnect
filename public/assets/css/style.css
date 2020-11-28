@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 body {
@@ -19,6 +19,10 @@ footer {
     flex-shrink: 0;
 }
 
+.fa-user-circle {
+    font-size: 1.2em;
+}
+
 .card {
     margin-left: 40px;
 }
@@ -28,11 +32,15 @@ footer {
     margin-bottom: 20px;
 }
 
-.nav-link {
- margin-right: 20px;
+.navbar-nav {
+    margin-right: 1rem;
 }
 
-.jumbotron, 
+.nav-item {
+ margin-left: 1rem;
+}
+
+.jumbotron,
 #landing {
     background-color: #efefef;
 }
