@@ -27,6 +27,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "scripts": {
+    "start": "node server.js",
     "lint": "eslint **/*.js --quiet",
     "test": "npm run lint"
   },
