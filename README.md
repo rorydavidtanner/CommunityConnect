@@ -6,8 +6,8 @@ CommunityConnect is an online app, connecting people who need help with voluntee
 ## Motivation
 Now that Australia is entering COVID-Normal, people are thinking about the habits they want to keep from lockdown.  One of those is stronger links to their community.  Until vaccines are fully rolled out, older and less mobile people will need help with shopping and home maintenance.  Neighbours may need to borrow tools and equipment, and everyone will need to find smart ways to travel less.
 ## Screenshots
-![CommunityConnect Home Screenshot](./blob/main/public/assets/HomeScreenshot.png)
-![CommunityConnect Task Screenshot](./blob/main/public/assets/TaskScreenshot.png)
+![CommunityConnect Home Screenshot](public/assets/HomeScreenshot.png)
+![CommunityConnect Task Screenshot](public/assets/TaskScreenshot.png)
 ## Build status
 Minimum Viable Product. Ready for use, but requiring further testing and feedback.
 ## Key technologies
